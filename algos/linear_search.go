@@ -1,4 +1,4 @@
-package main
+package algos
 
 func LinearSearch(dataList []int, key int) bool {
 	for i := range dataList {

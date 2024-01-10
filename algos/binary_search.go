@@ -1,4 +1,4 @@
-package main
+package algos
 
 func BinarySearch(dataList []int, key int) bool {
 	low := 0
