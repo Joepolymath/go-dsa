@@ -1,5 +1,6 @@
 package datastructures
 
+// stack using array/slice
 import "fmt"
 
 type Stack interface {
@@ -41,4 +42,16 @@ func (s Stack1) Peek() (interface{}, error) {
 	}
 	lastElement := s.Data[len(s.Data) - 1]
 	return lastElement, nil
+}
+
+func (s Stack1) GetBuffer() ([]interface{}, error) {
+	return s.Data, nil
+}
+
+func (s Stack1) GetSize() (int32, error) {
+	return s.Size, nil
+}
+
+func (s Stack1) IsEmpty() (bool, error) {
+	return s.Size == 0, nil
 }

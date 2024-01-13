@@ -12,11 +12,12 @@ func Test_BinarySearch_NotFound(t *testing.T) {
 	result := algos.BinarySearch(testArray, 2)
 
 	if result != expected {
-		t.Errorf("FAILED: Expected %v, got %v", expected, result)
+		t.Errorf(TestErrorResponse(expected, result))
 	} else {
-		t.Logf("SUCCESS. Expected %v, got %v", expected, result)
+		t.Logf(TestSuccessResponse(expected, result))
 	}
 }
+
 func Test_BinarySearch_Found(t *testing.T) {
 	testArray := []int{1, 3, 5, 6, 7, 9, 12}
 	expected := true
