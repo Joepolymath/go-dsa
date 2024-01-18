@@ -1,6 +1,6 @@
 package leet
 
-func twoSum(nums []int, target int) []int {
+func TwoSum(nums []int, target int) []int {
     memoryMap := make(map[int]int)
 
     for i, elem := range nums {
