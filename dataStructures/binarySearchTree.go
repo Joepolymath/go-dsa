@@ -42,3 +42,24 @@ func (b *BinarySearchTree) Insert(value int) bool {
 		}
 	}
 }
+
+func (b *BinarySearchTree) Contains(value int) bool {
+	if b.Root == nil {
+		return false
+	}
+
+	if b.Root.Value == value {
+		return true
+	}
+	
+	for current := b.Root; current != nil; {
+		if value < current.Value {
+			current = current.Left
+		} else if value > current.Value {
+			current = current.Right
+		} else {
+			return true
+		}
+	}
+	return false
+}
