@@ -4,18 +4,18 @@ type ValueTypes interface {
 	int | uint | float32
 }
 
-type BNode struct {
+type BNode[T ValueTypes] struct {
 	Value int
-	Right *BNode
-	Left	*BNode
+	Right *BNode[T]
+	Left	*BNode[T]
 }
 
-type BinarySearchTree struct {
-	Root	*BNode
+type BinarySearchTree[T ValueTypes] struct {
+	Root	*BNode[T]
 }
 
-func (b *BinarySearchTree) Insert(value int) bool {
-	newNode := &BNode{Value: value}
+func (b *BinarySearchTree[T]) Insert(value int) bool {
+	newNode := &BNode[T]{Value: value}
 	if b.Root == nil {
 		b.Root = newNode
 		return true
@@ -43,7 +43,7 @@ func (b *BinarySearchTree) Insert(value int) bool {
 	}
 }
 
-func (b *BinarySearchTree) Contains(value int) bool {
+func (b *BinarySearchTree[T]) Contains(value int) bool {
 	if b.Root == nil {
 		return false
 	}

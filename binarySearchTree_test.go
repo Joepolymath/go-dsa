@@ -8,7 +8,7 @@ import (
 
 func Test_Insert_BinarySearchTree(t *testing.T) {
 	
-	tree := &datastructures.BinarySearchTree{}
+	tree := &datastructures.BinarySearchTree[int]{}
 
 	expected := true
 	result := tree.Insert(5)
@@ -22,7 +22,7 @@ func Test_Insert_BinarySearchTree(t *testing.T) {
 }
 
 func Test_Contains_BinarySearchTree_Returns_True(t *testing.T) {
-	tree := &datastructures.BinarySearchTree{}
+	tree := &datastructures.BinarySearchTree[int]{}
 
 	tree.Insert(5)
 	tree.Insert(6)
@@ -39,7 +39,7 @@ func Test_Contains_BinarySearchTree_Returns_True(t *testing.T) {
 }
 
 func Test_Contains_BinarySearchTree_Returns_False(t *testing.T) {
-	tree := &datastructures.BinarySearchTree{}
+	tree := &datastructures.BinarySearchTree[int]{}
 
 	tree.Insert(5)
 	tree.Insert(6)
