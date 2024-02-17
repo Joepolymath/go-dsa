@@ -1,5 +1,7 @@
 package datastructures
 
+import "fmt"
+
 type ValueTypes interface {
 	int | uint | float32
 }
@@ -62,4 +64,12 @@ func (b *BinarySearchTree[T]) Contains(value int) bool {
 		}
 	}
 	return false
+}
+
+func (b *BinarySearchTree[T]) InOrderTraversal(node BNode[T]) {
+	if &node.Value != nil {
+		b.InOrderTraversal(*node.Left)
+		fmt.Println(node.Value)
+		b.InOrderTraversal(*node.Right)
+	}
 }

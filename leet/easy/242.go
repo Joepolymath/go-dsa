@@ -4,6 +4,7 @@ import (
 	"strings"
 )
 
+// Question link https://leetcode.com/problems/valid-anagram/
 func isAnagram(s string, t string) bool {
     if len(s) != len(t) {
         return false
